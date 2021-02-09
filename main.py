@@ -11,13 +11,11 @@ for question in question_data:
     # We created a list of questions (question_bank) where
     # we're adding each question/answer pair to.
 
-for pair in question_bank:
-    print(pair)
-    # This is just to show each question/answer pair object.
-
 game_quiz = QuizBrain(question_bank)
-game_quiz.next_question()
-
+while game_quiz.still_has_questions():
+    game_quiz.next_question()
+print('You reached the end of the Quiz!')
+print(f'Your total score was {game_quiz.score}/{len(question_bank)}')
 # TODO: asking the questions
 # TODO: check if answers are correct
 # TODO: check if we reached the end of the quizz
